@@ -12,7 +12,7 @@ Buatlah sebuah program untuk mengotomasi mesin PDA. Rancanglah user interface se
 
 ## Penjelasan 
 
-Mesin PDA (Pushdown Automaton) yang digunakan pada praktikum ini adalah jenis **Deterministic Pushdown Automaton (DPDA)** yang dirancang untuk mengenali bahasa bebas konteks (Context-Free Language):
+Mesin PDA yang digunakan pada praktikum ini adalah jenis **Deterministic Pushdown Automaton (DPDA)** yang dirancang untuk mengenali bahasa Context-Free Language:
 
 $$L = \{ a^n b^n \mid n \ge 0 \}$$
 
@@ -27,20 +27,20 @@ Secara konsep, mesin ini bekerja dalam tiga fase utama:
 
 Kode program diimplementasikan menggunakan bahasa pemrograman Python dengan antarmuka grafis modern memanfaatkan pustaka **CustomTkinter**. Arsitektur kode dibagi menjadi dua komponen utama:
 
-1. **Kelas `PDASimulator` (Backend)**:
+1. **Kelas `PDASimulator` (Logika)**:
    * Mengatur logika internal mesin PDA (pita input, stack, dan pencatatan riwayat transisi langkah demi langkah).
    * Fungsi `step()` menjalankan satu langkah transisi berdasarkan *state* aktif saat ini (`READ_1`, `PUSH_a`, `POP_1`, `READ_2`, `POP_2`, `ACCEPT`, `REJECT`), memperbarui isi tumpukan, sisa pita, dan mengembalikan status keaktifan.
 
-2. **Kelas `PDAGUI` (Frontend)**:
+2. **Kelas `PDAGUI` (Tampilan)**:
    * Mengatur tata letak antarmuka grafis (GUI) yang interaktif.
-   * **Bagan Diagram Alir (Flowchart Canvas)**: Menggambar node diagram dan panah transisi secara dinamis agar selalu berada tepat di tengah (*centered*) dan menyorot node/jalur transisi aktif saat simulasi berjalan.
-   * **Visualisasi Pita & Stack**: Menggambar isi tumpukan stack secara vertikal dan sisa pita input secara horizontal lengkap dengan petunjuk pembacaan kepala pita (*tape head*).
-   * **Kontrol Simulasi**: Menyediakan tombol interaktif seperti *Mulai Simulasi* (manual per langkah), *Auto Play* (pemutaran otomatis dengan jeda 750ms), *Simulasi Instan* (langsung ke hasil akhir), dan *Reset*.
+   * **Flowchart Canvas**: Menggambar node diagram dan panah transisi secara dinamis dan menyorot node/jalur transisi aktif saat simulasi berjalan.
+   * **Visualisasi Pita & Stack**: Menggambar isi tumpukan stack secara vertikal dan sisa pita input secara horizontal lengkap dengan petunjuk pembacaan *tape head*.
+   * **Kontrol Simulasi**: Menyediakan tombol interaktif seperti *Mulai Simulasi*, *Auto Play*, *Simulasi Instan*, dan *Reset*.
    * **Log Transisi**: Menampilkan riwayat langkah mesin PDA secara mendetail dalam kotak teks log.
 
 ## Cara Menjalankan
 
-1. Pastikan Python 3 dan pustaka `customtkinter` telah terinstal. Jika belum, Anda dapat menginstalnya lewat terminal:
+1. Pastikan `customtkinter` telah terinstal. Jika belum, instal lewat terminal:
    ```bash
    pip install customtkinter
    ```
