@@ -1,3 +1,9 @@
+# Laporan Praktikum 2 Otomata
+
+ 
+
+
+
 |  Nama | NRP  |    
 |---|---|
 | Maleka Ghaniya  | 5025241189  |   
